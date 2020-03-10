@@ -1,5 +1,5 @@
 {% set name = "SHARPpy" %}
-{% set version = "v1.4.0b1" %}
+{% set version = "v1.4.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/sharppy/SHARPpy/archive/{{version}}.tar.gz
-  sha256: 3c780c441b3b090ebe50065595e4d94573c79d1bc77c7c71fd3e3869516708b5
+  sha256: 55bce9e3e34958de7e30ab0cc1ade4abcd94328db08e8e7344ee4b8db905695a
 
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv --ignore-installed --no-cache-dir"
