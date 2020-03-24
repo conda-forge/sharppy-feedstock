@@ -12,7 +12,7 @@ source:
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv --ignore-installed --no-cache-dir"
   osx_is_app: True
-  number: 0
+  number: 1
   skip: true  # [py<35]
   entry_points:
     - sharppy = runsharp.full_gui:main
