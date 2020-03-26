@@ -1,18 +1,18 @@
 {% set name = "SHARPpy" %}
-{% set version = "v1.4.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/sharppy/SHARPpy/archive/{{version}}.tar.gz
+  url: https://github.com/sharppy/SHARPpy/archive/v{{ version }}.tar.gz
   sha256: 55bce9e3e34958de7e30ab0cc1ade4abcd94328db08e8e7344ee4b8db905695a
 
 build:
   script: "{{ PYTHON }} -m pip install . --no-deps -vv --ignore-installed --no-cache-dir"
   osx_is_app: True
-  number: 0
+  number: 1
   skip: true  # [py<35]
   entry_points:
     - sharppy = runsharp.full_gui:main
