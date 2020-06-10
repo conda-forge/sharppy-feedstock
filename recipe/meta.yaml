@@ -1,17 +1,17 @@
 {% set name = "SHARPpy" %}
-{% set version = "v1.4.0" %}
+{% set version = "1.4.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://github.com/sharppy/SHARPpy/archive/{{version}}.tar.gz
-  sha256: 55bce9e3e34958de7e30ab0cc1ade4abcd94328db08e8e7344ee4b8db905695a
+  url: https://github.com/sharppy/SHARPpy/archive/v{{ version }}.tar.gz
+  sha256: 03e05bf6b217134a93cf3d580d699951feaa91ee063a4c5a081b348bbac66993
 
 build:
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv --ignore-installed --no-cache-dir"
-  osx_is_app: True
+  script: {{ PYTHON }} -m pip install . --no-deps -vv --ignore-installed --no-cache-dir
+  osx_is_app: true
   number: 0
   skip: true  # [py<35]
   entry_points:
@@ -39,7 +39,7 @@ requirements:
     - requests
     - python-dateutil >=2
     - certifi
-    
+
 test:
   imports:
     - sharppy
@@ -51,14 +51,14 @@ about:
   license: BSD-3-Clause
   license_family: BSD
   license_file: LICENSE.rst
-  summary: 'Sounding/Hodograph Analysis and Research Program for Python'
+  summary: Sounding/Hodograph Analysis and Research Program for Python
   description: |
-        SHARPpy is a collection of open source sounding and hodograph analysis routines, a sounding plotting package, 
-        and an interactive, cross-platform application for analyzing real-time soundings all written in Python. 
-        It was developed to provide the atmospheric science community a free and consistent source of sounding analysis 
-        routines. SHARPpy is updated and vetted by professional meteorologists and climatologists within the scientific
-        community to help maintain a standard source of sounding routines.
-  doc_url: https://sharppy.github.io/SHARPpy/index.html 
+    SHARPpy is a collection of open source sounding and hodograph analysis routines, a sounding plotting package, 
+    and an interactive, cross-platform application for analyzing real-time soundings all written in Python. 
+    It was developed to provide the atmospheric science community a free and consistent source of sounding analysis 
+    routines. SHARPpy is updated and vetted by professional meteorologists and climatologists within the scientific
+    community to help maintain a standard source of sounding routines.
+  doc_url: https://sharppy.github.io/SHARPpy/index.html
   dev_url: https://github.com/sharppy/SHARPpy
 
 extra:
