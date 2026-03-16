@@ -27,6 +27,7 @@ requirements:
     - python
     - pip
     - setuptools
+    - versioneer
     - xorg-libxfixes  # [linux]
     - libgl-devel  # [linux]
   run:
