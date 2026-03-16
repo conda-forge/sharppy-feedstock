@@ -22,6 +22,7 @@ requirements:
     - python >=3.6
     - {{ compiler('c') }}  # [linux]
     - {{ compiler('cxx') }}  # [linux]
+    - {{ stdlib("c") }}  # [linux]
   host:
     - python
     - pip
